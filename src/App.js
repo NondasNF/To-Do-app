@@ -35,7 +35,7 @@ function App() {
           <button className="app-task-button" type="button" onClick={addTask}>Add</button>
         </div>
         <div className="app-task-board">
-          <TaskBoard tasks={tasks} />
+          <TaskBoard tasks={tasks} setTasks={setTasks} />
         </div>
       </main>
     </div>

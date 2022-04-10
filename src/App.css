@@ -61,6 +61,18 @@ body, .app-main, .app-header, .app-task-form {
   width: 100%;
 }
 
+.task-table {
+  width: 100%;
+}
+
+.table-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 @media screen and (min-width: 1024px) {
   .app-task-form {
     flex-direction: row;
@@ -76,5 +88,9 @@ body, .app-main, .app-header, .app-task-form {
   .app-task-board {
     width: 600px;
     font-size: 20px;
+  }
+  .table-head {
+    justify-content: space-between;
+    padding: 0 50px 0 50px;
   }
 }

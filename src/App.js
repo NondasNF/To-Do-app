@@ -1,6 +1,6 @@
 import './App.css'
 import { useState } from 'react'
-import TaskBoard from './components/TaskBoard.js'
+import TaskItem from './components/TaskItem.js'
 
 function App() {
   const [tasks, setTasks] = useState([])
@@ -22,6 +22,10 @@ function App() {
   function handleChangeTime(time) {
     setTaskTime(time)
   }
+  
+  function deleteTask(index) {
+    setTasks(tasks => tasks.filter((task, i) => i !== index))
+  }
 
   return (
     <div className="app">
@@ -35,10 +39,25 @@ function App() {
           <button className="app-task-button" type="button" onClick={addTask}>Add</button>
         </div>
         <div className="app-task-board">
-          <TaskBoard tasks={tasks} setTasks={setTasks} />
+          <h2>Tasks:</h2>
+          <table className="task-table">
+            <thead className="task-table-head">
+              <tr className="table-head">
+                <th>Task</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              {tasks.map((task, index) => {
+                return (
+                  <TaskItem name={task.name} time={task.time} key={index} trkey={index} deleteTask={deleteTask} />
+                )
+              })}
+            </tbody>
+          </table>
         </div>
-      </main>
-    </div>
+      </main >
+    </div >
   )
 }
 

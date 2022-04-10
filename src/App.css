@@ -55,7 +55,6 @@ body, .app-main, .app-header, .app-task-form {
 .app-task-button:hover {
   background-color: #ffffff;
   color:#2c4574;
-  transform: scale(1.1);
 }
 
 .app-task-board {

@@ -5,12 +5,18 @@ function Taskboard(props) {
 
   function handleChange(element) {
     let trElement = element.target.parentElement.parentElement
+    const cssStyle = {
+      colorGrey: '#636363',
+      colorDefault: 'inherit', 
+      textDecorationLineNone: 'none',
+      textDecorationLineLT: 'line-through',
+      }
     if (trElement.style.textDecorationLine === 'line-through') {
-      trElement.style.textDecorationLine = 'none'
-      trElement.style.color = 'inherit'      
+      trElement.style.textDecorationLine = cssStyle.textDecorationLineNone
+      trElement.style.color = cssStyle.colorDefault      
     } else {
-      trElement.style.textDecorationLine = 'line-through'
-      trElement.style.color = '#000000' //black
+      trElement.style.textDecorationLine = cssStyle.textDecorationLineLT
+      trElement.style.color = cssStyle.colorGrey
     }
   }
 
